@@ -1,0 +1,151 @@
+@import 'variables'
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  list-style: none
+  font-family: $font-default
+  color: $text-color
+  text-decoration: none
+
+img
+  max-width: 100%
+
+body
+  background: $background-color
+  text-align: center
+  position: relative
+  transition: .5s
+
+  &.active
+    background: $background-light
+
+main img
+  &.blur-1
+    position: absolute
+    bottom: 0px
+    left: 0px
+    z-index: -1
+  &.blur-2
+    position: absolute 
+    top: -20%
+    right: 0px
+    z-index: -1
+    
+.header
+  max-width: 1200px
+  margin: 0 auto
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  align-items: center
+  padding: 50px 0
+
+  nav ul
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    li + li // lis que vem depois de lis
+      margin-left: 4rem
+
+    a
+      color: $text-color
+      display: inline-block
+      font-size: .875rem
+      font-weight: 400
+      transition: .3s
+
+      &:hover
+        color: $roxo
+
+  &.active a // header active links
+    color: $roxo
+
+    &:hover
+      color: $background-color
+
+  a.btn // header btn
+    padding: .687rem 2.37rem
+    border: 1px solid $roxo
+    font-weight: 700
+    font-size: .687rem
+    border-radius: 6px
+    transition: .3s
+
+    &.active
+      color: $text-color
+      background: $roxo
+    
+    &:hover
+      background: $roxo
+      
+
+// Conteudo
+main 
+  h1
+    font-size: 5rem
+    font-weight: bold
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, .25))
+    letter-spacing: -0.03em
+    transition: .5s
+
+    &.active // h1 active
+      color: $text-black
+
+  h2
+    font-size: 5rem
+    color: $background-color
+    font-weight: bold
+    transition: .5s
+    letter-spacing: -0.03em
+    text-shadow: -1px -1px 0 $roxo, 1px -1px 0 $roxo, -1px 1px 0 $roxo, 1px 1px 0 $roxo
+    filter: drop-shadow(0 0 2px $roxo)
+
+    &.active // h2 active
+      color: $background-light
+
+
+// theme switch
+.theme
+  width: 40px
+  position: relative
+  height: 20px
+  background: $text-color
+  border-radius: 100px
+  box-shadow: inset 1px 1px 0px #dac8c8, inset -1px 1px 0px #dac8c8, inset -1px -1px 0px #dac8c8, inset 1px -1px 0px #dac8c8
+  cursor: pointer
+
+  &.active
+    background: $text-color
+    box-shadow: inset 1px 1px 0px #00000031, inset -1px -1px 0px #00000031, inset 0px -1px 0px #00000036, inset -1px 0px 0px #00000031,
+
+  img
+    width: 15px
+  
+  .lua
+    position: absolute
+    left: 1px
+  
+  .sol
+    position: absolute
+    right: 1px
+
+
+
+.bullet
+  position: absolute
+  width: 18px
+  height: 18px
+  z-index: 2
+  border-radius: 50%
+  bottom: 1px
+  left: 1px
+  background: $background-color
+  transition: .5s
+  box-shadow: inset 1px 1px 0px $roxo, inset -1px 1px 0px $roxo, inset 1px -1px 0px $roxo, inset -1px -1px 0px $roxo
+
+  &.active
+    left: 22px
+    background: $text-black
+
