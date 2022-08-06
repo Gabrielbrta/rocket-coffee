@@ -1,7 +1,7 @@
 # Rocket Coffee
 ## Desafio da Rocketseat 
 <p>
-O desafio consiste em criar codar o layout do figma e deixar responsivo.
+O desafio consiste em codar o layout do figma e deixar responsivo.
 </p>
 <p>Mas como na plataforma também tem ao desafio de fazer um switch theme, então eu juntei todos em 1 e fiz o <strong>light mode<strong></p>
 
