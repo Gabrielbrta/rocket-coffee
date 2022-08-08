@@ -7,6 +7,9 @@ O desafio consiste em codar o layout do figma e deixar responsivo.
 
 <p>No momento também estou aprendendo SASS então utilizei ele para estilizar, mesmo que seja algo relativamente simples.</p>
 
+<h2>Resultado</h2>
+<img src="./img/result.jpg">
+
 <ul>
   <h2>Tecnologias que utilizei</h2>
   <li>JavaScript</li>
