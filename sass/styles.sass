@@ -1,3 +1,4 @@
+@use 'mixins'
 @import 'variables'
 
 *
@@ -27,7 +28,15 @@ main img
     bottom: 0px
     left: 0px
     z-index: -1
+
+    @include mixins.mobile-500 
+      bottom: 0px
+      left: 0px
+      z-index: 0
   &.blur-2
+    @include mixins.mobile-500
+      display: none
+
     position: absolute 
     top: -20%
     right: 0px
@@ -42,12 +51,70 @@ main img
   align-items: center
   padding: 50px 0
 
+  @include mixins.mobile-500
+    border-bottom: 1px solid #29292E
+    padding: 20px 10px
+
+
+  .logo-desktop
+    @include mixins.mobile-500
+      display: none
+
+  .logo-mobile
+    display: none
+    @include mixins.mobile-500
+      display: block
+
+  nav
+    .navigation-mobile
+      display: none
+      @include mixins.mobile-500
+        display: block
+        padding: 10px 0px
+        cursor: pointer
+    
+
   nav ul
     display: flex
     flex-wrap: wrap
     align-items: center
     li + li // lis que vem depois de lis
       margin-left: 4rem
+    
+    @include mixins.mobile-500
+      display: none
+
+      &.active
+        display: block
+        width: 100%
+        height: 100vh
+        position: absolute
+        color: white
+        z-index: 3
+        background: $background-color
+        right: 0%
+        top: 70px
+        text-align: left
+
+        li
+          margin: 0
+          padding: 10px 0px 10px 30px
+          display: block
+          position: relative
+          border-top: 1px solid #29292E
+          transition: .3s
+
+          &:hover 
+            &::before
+              content: ''
+              display: inline-block
+              position: absolute
+              width: 5px
+              left: 0
+              top: 0px
+              height: 40px
+              background: $roxo
+          
 
     a
       color: $text-color
@@ -66,20 +133,10 @@ main img
       color: $background-color
 
   a.btn // header btn
-    padding: .687rem 2.37rem
-    border: 1px solid $roxo
-    font-weight: 700
-    font-size: .687rem
-    border-radius: 6px
-    transition: .3s
-
-    &.active
-      color: $text-color
-      background: $roxo
-    
-    &:hover
-      background: $roxo
-      
+    @include mixins.button
+    @include mixins.mobile-500
+      display: none
+  
 
 // Conteudo
 main 
@@ -93,6 +150,33 @@ main
     &.active // h1 active
       color: $text-black
 
+    @include mixins.mobile-500 
+      font-size: 3rem
+      margin-top: 6.12rem
+
+  .mobile-text
+    display: none
+    @include mixins.mobile-500
+      display: inline-block
+      margin: 5.5rem 0
+      font-size: 1.875rem
+      font-weight: 600
+      color: $text-color
+      max-width: 320px
+    
+    &.active
+      color: $text-black
+  
+  .btn
+    display: none
+    @include mixins.mobile-500
+      display: inline-block
+      @include mixins.button
+    text-align: center
+
+    &-setinha
+      margin-left: 10px
+      
   h2
     font-size: 5rem
     color: $background-color
@@ -104,6 +188,10 @@ main
 
     &.active // h2 active
       color: $background-light
+    // h2 mobile
+    @include mixins.mobile-500 
+      font-size: 3rem
+
 
 
 // theme switch

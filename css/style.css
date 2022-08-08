@@ -28,11 +28,23 @@ main img.blur-1 {
   left: 0px;
   z-index: -1;
 }
+@media (max-width: 500px) {
+  main img.blur-1 {
+    bottom: 0px;
+    left: 0px;
+    z-index: 0;
+  }
+}
 main img.blur-2 {
   position: absolute;
   top: -20%;
   right: 0px;
   z-index: -1;
+}
+@media (max-width: 500px) {
+  main img.blur-2 {
+    display: none;
+  }
 }
 
 .header {
@@ -44,6 +56,35 @@ main img.blur-2 {
   align-items: center;
   padding: 50px 0;
 }
+@media (max-width: 500px) {
+  .header {
+    border-bottom: 1px solid #29292E;
+    padding: 20px 10px;
+  }
+}
+@media (max-width: 500px) {
+  .header .logo-desktop {
+    display: none;
+  }
+}
+.header .logo-mobile {
+  display: none;
+}
+@media (max-width: 500px) {
+  .header .logo-mobile {
+    display: block;
+  }
+}
+.header nav .navigation-mobile {
+  display: none;
+}
+@media (max-width: 500px) {
+  .header nav .navigation-mobile {
+    display: block;
+    padding: 10px 0px;
+    cursor: pointer;
+  }
+}
 .header nav ul {
   display: flex;
   flex-wrap: wrap;
@@ -51,6 +92,41 @@ main img.blur-2 {
 }
 .header nav ul li + li {
   margin-left: 4rem;
+}
+@media (max-width: 500px) {
+  .header nav ul {
+    display: none;
+  }
+  .header nav ul.active {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    color: white;
+    z-index: 3;
+    background: #000;
+    right: 0%;
+    top: 70px;
+    text-align: left;
+  }
+  .header nav ul.active li {
+    margin: 0;
+    padding: 10px 0px 10px 30px;
+    display: block;
+    position: relative;
+    border-top: 1px solid #29292E;
+    transition: 0.3s;
+  }
+  .header nav ul.active li:hover::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 5px;
+    left: 0;
+    top: 0px;
+    height: 40px;
+    background: #8257E5;
+  }
 }
 .header nav ul a {
   color: #ffffff;
@@ -80,8 +156,17 @@ main img.blur-2 {
   color: #ffffff;
   background: #8257E5;
 }
+.header a.btn.active:hover {
+  background: #F8F8F8;
+  color: #000;
+}
 .header a.btn:hover {
   background: #8257E5;
+}
+@media (max-width: 500px) {
+  .header a.btn {
+    display: none;
+  }
 }
 
 main h1 {
@@ -94,6 +179,57 @@ main h1 {
 main h1.active {
   color: #202020;
 }
+@media (max-width: 500px) {
+  main h1 {
+    font-size: 3rem;
+    margin-top: 6.12rem;
+  }
+}
+main .mobile-text {
+  display: none;
+}
+@media (max-width: 500px) {
+  main .mobile-text {
+    display: inline-block;
+    margin: 5.5rem 0;
+    font-size: 1.875rem;
+    font-weight: 600;
+    color: #ffffff;
+    max-width: 320px;
+  }
+}
+main .mobile-text.active {
+  color: #202020;
+}
+main .btn {
+  display: none;
+  text-align: center;
+}
+@media (max-width: 500px) {
+  main .btn {
+    display: inline-block;
+    padding: 0.687rem 2.37rem;
+    border: 1px solid #8257E5;
+    font-weight: 700;
+    font-size: 0.687rem;
+    border-radius: 6px;
+    transition: 0.3s;
+  }
+  main .btn.active {
+    color: #ffffff;
+    background: #8257E5;
+  }
+  main .btn.active:hover {
+    background: #F8F8F8;
+    color: #000;
+  }
+  main .btn:hover {
+    background: #8257E5;
+  }
+}
+main .btn-setinha {
+  margin-left: 10px;
+}
 main h2 {
   font-size: 5rem;
   color: #000;
@@ -105,6 +241,11 @@ main h2 {
 }
 main h2.active {
   color: #F8F8F8;
+}
+@media (max-width: 500px) {
+  main h2 {
+    font-size: 3rem;
+  }
 }
 
 .theme {

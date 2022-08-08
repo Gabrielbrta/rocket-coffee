@@ -1,0 +1,25 @@
+@import 'variables'
+
+@mixin mobile-500
+  @media (max-width: 500px)
+    @content
+
+@mixin button
+  padding: .687rem 2.37rem
+  border: 1px solid $roxo
+  font-weight: 700
+  font-size: .687rem
+  border-radius: 6px
+  transition: .3s
+
+  &.active
+    color: $text-color
+    background: $roxo
+
+    &:hover
+      background: $background-light
+      color: $background-color
+  
+  &:hover
+    background: $roxo
+  
