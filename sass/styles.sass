@@ -64,6 +64,7 @@ main img
     display: none
     @include mixins.mobile-500
       display: block
+      order: -1
 
   nav
     .navigation-mobile
@@ -72,30 +73,43 @@ main img
         display: block
         padding: 10px 0px
         cursor: pointer
+        order: 3
     
 
   nav ul
     display: flex
     flex-wrap: wrap
     align-items: center
+    transition: .5s
+
     li + li // lis que vem depois de lis
       margin-left: 4rem
     
     @include mixins.mobile-500
       display: none
 
-      &.active
+      &.mobile
+        @include mixins.animation-menu
+        animation: down 1.5s ease-in-out alternate 
         display: block
         width: 100%
         height: 100vh
+        transition: .5s
         position: absolute
         color: white
+        order: 3
         z-index: 3
         background: $background-color
         right: 0%
         top: 70px
         text-align: left
 
+        &.active
+          background:$background-light
+          
+          a
+            color: $text-black
+          
         li
           margin: 0
           padding: 10px 0px 10px 30px
@@ -204,6 +218,9 @@ main
   box-shadow: inset 1px 1px 0px #dac8c8, inset -1px 1px 0px #dac8c8, inset -1px -1px 0px #dac8c8, inset 1px -1px 0px #dac8c8
   cursor: pointer
 
+  @include mixins.mobile-500
+    order: -1
+
   &.active
     background: $text-color
     box-shadow: inset 1px 1px 0px #00000031, inset -1px -1px 0px #00000031, inset 0px -1px 0px #00000036, inset -1px 0px 0px #00000031,
@@ -218,8 +235,6 @@ main
   .sol
     position: absolute
     right: 1px
-
-
 
 .bullet
   position: absolute
