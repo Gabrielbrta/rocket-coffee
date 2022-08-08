@@ -9,7 +9,7 @@ O desafio consiste em codar o layout do figma e deixar responsivo.
 
 <h2>Resultado</h2>
 <img src="./img/result.jpg">
-
+  <a href="https://rocketcoffeebrta.netlify.app/">Link do site</a>
 <ul>
   <h2>Tecnologias que utilizei</h2>
   <li>JavaScript</li>
